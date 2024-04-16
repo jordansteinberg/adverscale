@@ -2,7 +2,7 @@
     x-data="{
         month: null,
         date: null,
-        year: 2000,
+        year: null,
         dateString: '',
         initialize(value) {
             if (value) {
@@ -46,7 +46,8 @@
         </select>
         /
         <select x-model="year" x-on:change.debounce="updateValue()">
-            @for ($i = 1900; $i <= 2023; $i++)
+            <option value="null">-</option>
+            @for ($i = 2024; $i >= 1920; $i--)
             <option value="{{$i}}">{{$i}}</option>
             @endfor
         </select>

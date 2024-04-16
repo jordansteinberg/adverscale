@@ -8,12 +8,12 @@
 
     <form wire:submit.prevent="submit" method="post">
         @if ($page === 1)
-        <x-textfield label="First Name" wire:model="firstName"></x-textfield>
-        <x-textfield label="Last Name" wire:model="lastName"></x-textfield>
-        <x-textfield label="Address" wire:model="address"></x-textfield>
-        <x-textfield label="City" wire:model="city"></x-textfield>
-        <x-textfield label="Country" wire:model="country"></x-textfield>
-        <x-datepicker id="yoyo" label="Date of Birth" wire:model="dateOfBirth"></x-datepicker>
+        <x-textfield id="firstName" label="First Name" wire:model="firstName"></x-textfield>
+        <x-textfield id="lastName" label="Last Name" wire:model="lastName"></x-textfield>
+        <x-textfield id="address" label="Address" wire:model="address"></x-textfield>
+        <x-textfield id="city" label="City" wire:model="city"></x-textfield>
+        <x-textfield id="country" label="Country" wire:model="country"></x-textfield>
+        <x-datepicker id="dateOfBirth" label="Date of Birth" wire:model="dateOfBirth"></x-datepicker>
 
         <button type="button" wire:click="$set('page', 2)">Next</button>
         @endif
@@ -36,8 +36,8 @@
             </div>
 
             <div x-show="married === 'yes'">
-                <x-datepicker label="Date of Marriage" wire:model="marriageDate"></x-datepicker>
-                <x-textfield label="Country of Marriage" wire:model="marriageCountry"></x-textfield>
+                <x-datepicker id="marriageDate" label="Date of Marriage" wire:model="marriageDate"></x-datepicker>
+                <x-textfield id="marriageCountry" label="Country of Marriage" wire:model="marriageCountry"></x-textfield>
             </div>
             <div x-show="married === 'no'">
                 <div class="form-field">
